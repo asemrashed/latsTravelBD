@@ -23,7 +23,7 @@ const spotRouter= require('./routes/spots')
 const reviewRouter= require('./routes/review')
 const usersRouter= require('./routes/users')
 
-const dbUrl= process.env.DB_URL || 'mongodb://127.0.0.1:27017/travel'
+const dbUrl='mongodb://127.0.0.1:27017/travel' || process.env.DB_URL
 mongoose.connect(dbUrl)
     .then( async() => {
         console.log('working');
