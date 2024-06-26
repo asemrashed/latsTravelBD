@@ -19,7 +19,7 @@ const seed = async () => {
         await Spot.deleteMany({});
     for (let i = 0; i < 25; i++) {
         const random = Math.floor(Math.random() * locations.length);
-        const price= Math.floor(Math.random()*500)+10;
+        // const price= Math.floor(Math.random()*500)+10;
         const spot = new Spot({
             auther:'666039ee588a44800eb8f813',
             title: locations[random].spotName,
@@ -31,7 +31,7 @@ const seed = async () => {
                     locations[random].longitude,
                     locations[random].latitude
                 ] },
-            price,
+            // price,
             images:  [
                 {
                   url: 'https://res.cloudinary.com/dpfedgpdk/image/upload/v1717951100/travelBD/kilxxu5metdsrd45o42r.jpg',

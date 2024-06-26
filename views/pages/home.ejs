@@ -18,15 +18,15 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="collapse navbar-collapse bg" id="navbarNavAltMarkup">
                         <div class="navbar-nav ms-auto">
-                            <a class="nav-link active" aria-current="page" href="/home">Home</a>
-                            <a class="nav-link" href="/spots">Spots</a>
+                            <a class="nav-link active a" aria-current="page" href="/home">Home</a>
+                            <a class="nav-link a" href="/spots">Spots</a>
                             <% if(!currentUser) {%>
-                                <a class="nav-link text-primary" href="/login">Login</a>
-                                <a class="nav-link text-primary" href="/register">Register</a>
+                                <a class="nav-link text-primary a" href="/login">Login</a>
+                                <a class="nav-link text-primary a" href="/register">Register</a>
                             <% } else{ %>
-                            <a class="nav-link text-danger" href="/logout">Logout</a>
+                            <a class="nav-link text-warning a" href="/logout">Logout</a>
                             <% } %>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
             <a class="btn btn-success font-weight-bold" href="/spots">View All Spot</a>
         </main>
         <footer class="mt-auto text-white-50">
-            <p>&copy 2024 latsTravelBD</p>
+            <p>&copy 2024 latsTravelBD__________<span>by_asem-rashed</span></p> 
         </footer>
     </div>
 

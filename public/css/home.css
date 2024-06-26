@@ -34,3 +34,25 @@ h3{
     color: rgba(255, 255, 255, 1);
     border-bottom-color: rgba(255, 255, 255, 1);
 }
+@media(max-width:992px){
+    .bg{
+        background-color: rgb(54, 54, 54);
+        border-bottom-left-radius: 5%;
+        border-bottom-right-radius: 5%;
+    }
+    .a{
+        margin-left: 0%;
+    }
+    .a:hover{
+        transition: 0.5s;
+        color: rgba(255, 255, 255, 1);
+        border-color: rgb(27, 27, 27);
+        border-radius: 5%;
+    }
+    .nav-link{
+        border: 0.20rem solid transparent;
+    }
+    .nav-link.active{
+        border-bottom-color: rgb(44, 44, 44);
+    }
+}

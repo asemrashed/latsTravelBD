@@ -27,7 +27,7 @@ const travelSchema= new Schema({
             required: true
         }
     },
-    price:Number,
+    // price:Number,
     type:String,
     location:String,
     auther:{

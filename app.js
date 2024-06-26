@@ -23,7 +23,8 @@ const spotRouter= require('./routes/spots')
 const reviewRouter= require('./routes/review')
 const usersRouter= require('./routes/users')
 
-const dbUrl= process.env.DB_URL || 'mongodb://127.0.0.1:27017/travel'
+// process.env.DB_URL || 
+const dbUrl='mongodb://127.0.0.1:27017/travel'
 mongoose.connect(dbUrl)
     .then( async() => {
         console.log('working');
@@ -85,7 +86,8 @@ app.use(
         },
     })
 );
-const secret= process.env.SECRET || 'havetobestronger'
+// || process.env.SECRET
+const secret= 'havetobestronger' 
 const store= MongoStore.create({
     mongoUrl: dbUrl,
     touchAfter: 24 * 60 * 60,
@@ -129,10 +131,10 @@ app.use((req,res,next)=>{
 
 app.use('/spots', spotRouter )
 app.use('/spots/:id/review', reviewRouter )
-app.use('/', usersRouter)
 app.use('/home', (req,res)=>{
     res.render('pages/home')
 })
+app.use('/', usersRouter)
 
 
 app.all('*',(req, res, next)=>{ 

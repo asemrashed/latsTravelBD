@@ -15,8 +15,8 @@
                 <div class="card-body">
                     <h4 class="card-text"><%= s.title%> </h4>
                     <h5 class="card-text"> type: <%= s.type %> </h5>
-                    <h5 class="card-text">price: <%= s.price %></h5>
-                    <p class="card-text"><%= s.location%></p>
+                    <!-- <h5 class="card-text">price: <%= s.price %></h5> -->
+                    <p class="card-text "><b><%= s.location%></b></p>
                     <a href="/spots/<%= s._id %>" class="btn btn-primary">see details</a>
                     <form  class="d-inline" action="/spots/<%= s._id %>?_override=delete" method="post">
                         <button class="btn btn-danger">Delete</button>    
