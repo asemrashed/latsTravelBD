@@ -85,18 +85,17 @@ app.use(
         },
     })
 );
+const secret= process.env.SECRET || 'havetobestronger'
 const store= MongoStore.create({
     mongoUrl: dbUrl,
     touchAfter: 24 * 60 * 60,
-    crypto: {
-        secret:'havetobestronger'
-    }
+    crypto: {secret}
 })
 
 const sessionConfig={
     store,
     name:'cookie',
-    secret:'havetobestronger',
+    secret,
     resave: false,
     saveUninitialized: true,
     cookie:{
@@ -144,7 +143,7 @@ app.use((err, req, res,next)=>{
     if(!err.message){ err.message= 'something wrong happend'}
     res.status(status).render('./pages/error',{err})
 })  
-
-app.listen(3020, (req, res)=> 
-    console.log('listening from port 3020'))
+const port= process.env.port || 3020
+app.listen(port, (req, res)=> 
+    console.log(`listening from port ${port}`))
                                                   
