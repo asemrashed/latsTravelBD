@@ -1,0 +1,44 @@
+<% layout('layOut/layout') %>
+<div class="col-md-6 offset-md-3 mt-5">
+    <h1 class="text-centet bg-secondary text-light p-2">Update place</h1>
+    <form action="/spots/<%= spot._id %>?_override=put" method="post" class="novalidate was-validated" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label class="form-label" for="title">Place name</label>
+            <input class="form-control" type="text" id="title" 
+            name="spot[title]" value="<%= spot.title %>"  required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="price">price</label>
+            <input class="form-control" type="number" id="price" 
+            name="spot[price]" value="<%= spot.price %>" required>     
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="type">type</label>
+            <input class="form-control" type="text" id="type" 
+            name="spot[type]" value="<%= spot.type %>" required>     
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="location">Location</label>
+            <input class="form-control" type="text" id="location" 
+            name="spot[location]" value="<%= spot.location %>" required>
+        </div>
+        <div class="mb-3">
+            <label for="imgInput" class="form-label">Add more photos</label>
+            <input class="form-control" type="file" name="image" id="imgInput" multiple>
+        </div >
+        <div class="mb-3">
+            <% spot.images.forEach(function (img, i){ %>  
+                <img crossorigin="anonymous" src="<%= img.thumbnail %>" alt="" class="img-thumbnail">
+                <div class="form-check-inline">
+                    <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value="<%= img.filename %>">
+                </div>
+                <label  for="image-<%=i%>">Delete..!</label>
+            <% }) %>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">Save</button>
+            <!-- <a href="/home/<%= spot._id %>" class="btn btn-primary">Add to map</a> -->
+            <a class="btn btn-success" href="/spots">back</a>
+        </div>
+    </form>
+</div>

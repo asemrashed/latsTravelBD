@@ -1,0 +1,38 @@
+<% layout('layOut/layout') %>
+<div class="col-md-6 offset-md-3">
+    <h1 class="text-centet bg-secondary text-light p-2">Add place</h1>
+    <form method="post" action="/spots" class="needs-validation" novalidate enctype="multipart/form-data">
+        <div class="mb-3">
+            <label class="form-label" for="title">Place name</label>
+            <input class="form-control" type="text" id="title" name="spot[title]"  required>
+            <div class="invalid-feedback">
+                Please enter a Place Name.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="imgInput" class="form-label">Add photos</label>
+            <input class="form-control" type="file" name="image" id="imgInput" multiple required>
+            <div class="invalid-feedback">
+                Minimum ONE image required.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="price">price</label>
+            <input class="form-control validate" type="number" id="price" name="spot[price]" required>     
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="type">type</label>
+            <input class="form-control" type="text" id="type" name="spot[type]" required>     
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="location">Location</label>
+            <input class="form-control" type="text" id="location" name="spot[location]"  required>
+        </div class="mb-3">
+        <button class="btn btn-success">add</button>
+        <a class="btn btn-dark" href="/spots">back</a>
+    </form>
+
+</div>
+
+
+    

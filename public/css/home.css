@@ -1,0 +1,36 @@
+body{
+    height: 100vh;
+    background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+     url("https://images.wallpaperscraft.com/image/single/tourist_traveler_mountains_180030_1920x1080.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.cover-container{
+    max-width: 70vw;
+} 
+h3{
+    float: left;
+}
+.nav{
+    float: right;
+}
+.navbar-brand{
+    font-size: calc(1.10rem + 1.5vw);
+    font-weight: 600;
+}
+.nav-link{
+    padding: 0.25rem 0;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    margin-left: 1.25rem;
+    border-bottom: 0.20rem solid transparent;
+}
+.nav-link.active{
+    color: white;
+    border-bottom-color: rgba(255, 255, 255, 1);
+}
+.nav-link:hover{
+    transition: 0.5s;
+    color: rgba(255, 255, 255, 1);
+    border-bottom-color: rgba(255, 255, 255, 1);
+}
