@@ -34,7 +34,7 @@ h3{
     color: rgba(255, 255, 255, 1);
     border-bottom-color: rgba(255, 255, 255, 1);
 }
-@media(max-width:992px){
+@media(max-width:768px){
     .bg{
         background-color: rgb(54, 54, 54);
         border-bottom-left-radius: 5%;
@@ -46,7 +46,7 @@ h3{
     .a:hover{
         transition: 0.5s;
         color: rgba(255, 255, 255, 1);
-        border-color: rgb(27, 27, 27);
+        border-color: rgb(204, 202, 202);
         border-radius: 5%;
     }
     .nav-link{
