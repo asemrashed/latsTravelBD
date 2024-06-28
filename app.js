@@ -131,10 +131,10 @@ app.use((req,res,next)=>{
 
 app.use('/spots', spotRouter )
 app.use('/spots/:id/review', reviewRouter )
-app.use('/home', (req,res)=>{
+app.use('/', usersRouter)
+app.use('/', (req,res)=>{
     res.render('pages/home')
 })
-app.use('/', usersRouter)
 
 
 app.all('*',(req, res, next)=>{ 
