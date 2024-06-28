@@ -27,12 +27,14 @@ map.on('load', function () {
             'circle-color': [
                 'step',
                 ['get', 'point_count'],
-                '#01D0D0',
+                '#26a1ed',
                 5,  // 5/>5 then circle color will change
                 '#33FF7D',
-                15,
+                10,
                 '#01D05F'
             ],
+            'circle-stroke-width': 1,
+            'circle-stroke-color': '#0a0a0a',
             'circle-radius': [
                 'step',
                 ['get', 'point_count'],
@@ -63,10 +65,10 @@ map.on('load', function () {
         source: 'spot',
         filter: ['!', ['has', 'point_count']],
         paint: {
-            'circle-color': '#11b4da',
+            'circle-color': '#f23f27',
             'circle-radius': 4,
             'circle-stroke-width': 1,
-            'circle-stroke-color': '#fff'
+            'circle-stroke-color': '#0a0a0a'
         }
     });
 
