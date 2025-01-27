@@ -96,7 +96,7 @@ app.use(
     })
 );
 // || process.env.SECRET
-const secret= process.env.SECRET || 'haveToBeStronger';
+const secret='haveToBeStronger' ||  process.env.SECRET;
 const store= MongoStore.create({
     mongoUrl: dbUrl,
     touchAfter: 24 * 60 * 60,
