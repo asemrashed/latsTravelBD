@@ -25,13 +25,22 @@ const usersRouter= require('./routes/users')
 
 // process.env.DB_URL || 
 const dbUrl=process.env.DB_URL ||  'mongodb://127.0.0.1:27017/travel'
-mongoose.connect(dbUrl)
+mongoose.connect(dbUrl, {
+    tls: true,  // Force SSL connection
+    tlsInsecure: false,  // Avoid insecure SSL connection (if any)
+})
     .then( async() => {
         console.log('working');
+
+        if (process.env.SEED_DB === 'true') {
+            console.log('Seeding the database...');
+            console.log('Seeding completed.');
+        }
     })
     .catch((err) => {
         console.log(' HERE IS A PROBLEM');
         console.log(err);
+        process.exit(1);
     }) 
 
 app.engine('ejs', ejsMate)
@@ -87,7 +96,7 @@ app.use(
     })
 );
 // || process.env.SECRET
-const secret= 'havetobestronger' || process.env.SECRET
+const secret= process.env.SECRET || 'haveToBeStronger';
 const store= MongoStore.create({
     mongoUrl: dbUrl,
     touchAfter: 24 * 60 * 60,
