@@ -1,62 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://res.cloudinary.com/dpfedgpdk/image/upload/v1737945581/travelBD_irhn40.png"
+    />
     <title>travelBD</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/home.css">
-</head>
-<body class="d-felx text-center text-white bg-dark">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body class="d-felx text-center text-white bg-dark">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <header class="mb-auto row">
-            <nav class="col-md-10 offset-md-1 navbar fixed-top navbar-expand-md navbar-dark ">
-                <div class="container-fluid ">
-                    <img src="https://res.cloudinary.com/dpfedgpdk/image/upload/v1737945581/travelBD_irhn40.png" style="width: 50px; margin-right: 5px;"/>
-                    <a class="navbar-brand" href="" style="font-weight: bold;">Travel Bangladesh</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse bg" id="navbarNavAltMarkup">
-                        <div class="navbar-nav ms-auto">
-                            <a class="nav-link active a" aria-current="page" href="/">Home</a>
-                            <a class="nav-link a" href="/spots">Spots</a>
-                            <% if(!currentUser) {%>
-                                <a class="nav-link text-info a" href="/login">Login</a>
-                                <a class="nav-link text-info a" href="/register">Register</a>
-                            <% } else{ %>
-                            <a class="nav-link text-warning a" href="/logout">Logout</a>
-                            <% } %>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-            
-        </header>
-        <main class="px-3 mt-5">
-            <h1>Welcome to</h1>
-            <h1 class="pb-2">BANGLADESH</h1>
-            <p class="lead mt-4">
-                Discover Bangladesh. <br>
-                colorful culture, lush landscapes, and rich history. <br> 
-                Experience friendly locals, delicious cuisine, and unique traditions. <br><br>
-                A journey to remember...
-            </p>
-            <a class="btn btn-success font-weight-bold mt-4" href="/spots">View All Spot</a>
-        </main>
-        <footer class="mt-auto text-white-50">
-            <p>&copy 2024 <span>by_asem-rashed</span></p> 
-        </footer>
+      <header class="mb-auto row">
+        <nav
+          class="col-md-10 offset-md-1 navbar fixed-top navbar-expand-md navbar-dark"
+        >
+          <div class="container-fluid">
+            <img
+              src="https://res.cloudinary.com/dpfedgpdk/image/upload/v1737945581/travelBD_irhn40.png"
+              style="width: 50px; margin-right: 5px"
+            />
+            <a class="navbar-brand" href="" style="font-weight: 500"
+              >Travel Bangladesh</a
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse bg" id="navbarNavAltMarkup">
+              <div class="navbar-nav ms-auto">
+                <a class="nav-link active a" aria-current="page" href="/"
+                  >Home</a
+                >
+                <a class="nav-link a" href="/spots">Spots</a>
+                <% if(!currentUser) {%>
+                <a class="nav-link text-info a" href="/login">Login</a>
+                <a class="nav-link text-info a" href="/register">Register</a>
+                <% } else{ %>
+                <a class="nav-link text-warning a" href="/logout">Logout</a>
+                <% } %>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main class="px-3 mt-5">
+        <h1>Welcome to</h1>
+        <h1 class="pb-2">BANGLADESH</h1>
+        <p class="lead mt-4">
+          Discover Bangladesh. <br />
+          colorful culture, lush landscapes, and rich history. <br />
+          Experience friendly locals, delicious cuisine, and unique traditions.
+          <br /><br />
+          A journey to remember...
+        </p>
+        <a class="btn btn-success font-weight-bold mt-4" href="/spots"
+          >View All Spot</a
+        >
+      </main>
+      <footer class="mt-auto text-white-50">
+        <p>&copy 2024 <span>by_asem-rashed</span></p>
+      </footer>
     </div>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" 
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" 
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" 
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" 
-        crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
