@@ -1,36 +1,44 @@
 <% layout('layOut/layout') %>
 <div id="cluster-map" class="pt-5"></div>
-<h1>TRAVEL SPOTs IN BANGLADESH</h1> 
-<% for(let s of spot){ %> 
-    <div class="card mb-2">
-        <div class="row">
-            <div class=" col-sm-12 col-md-5 col-lg-4">
-                <% if(s.images.length) {%>
-                    <img crossorigin="anonymous" alt="" class="img-fluid col-12" src="<%= s.images[0].url %>" >
-                <% }else{ %>
-                    <img crossorigin="anonymous" alt="" class="img-fluid col-12" src="https://res.cloudinary.com/dpfedgpdk/image/upload/v1718475868/travelBD/rxhfvvdzwulw2ulzf7xi.jpg" >
-                <% } %>    
-            </div>
-            <div class="col-sm-12 col-md-7 col-lg-8">
-                <div class="card-body">
-                    <h4 class="card-text"><%= s.title%> </h4>
-                    <h5 class="card-text"> type: <%= s.type %> </h5>
-                    <!-- <h5 class="card-text">price: <%= s.price %></h5> -->
-                    <p class="card-text "><b><%= s.location%></b></p>
-                    <a href="/spots/<%= s._id %>" class="btn btn-primary">see details</a>
-                    <!-- <form  class="d-inline" action="/spots/<%= s._id %>?_override=delete" method="post">
-                        <button class="btn btn-danger">Delete</button>    
-                    </form> -->
-                </div>
-            </div>
-        </div>
+<h2 class="p-4 text-center">Top Destinations in BANGLADESH</h2> 
+
+<div class="row">
+      <% if (spot.length === 0) { %>
+    <div class="col-12 text-center mt-4">
+      <h4 class="text-muted">No spots found for your search.</h4>
     </div>
-<% } %>    
+  <% } else { %>
+  <% for(let s of spot){ %> 
+    <div class="col-12 col-md-6 mb-3">   <!-- full width on mobile, 2 cards per row on md+ -->
+      <div class="card h-100">
+        <div class="row g-0">
+          <div class="col-sm-12 col-md-5 col-lg-6">
+            <% if(s.images.length) { %>
+              <img crossorigin="anonymous" alt="" class="img-fluid w-120 h-100 object-fit-cover" src="<%= s.images[0].url %>">
+            <% } else { %>
+              <img crossorigin="anonymous" alt="" class="img-fluid w-120 h-100 object-fit-cover" src="https://res.cloudinary.com/dpfedgpdk/image/upload/v1718475868/travelBD/rxhfvvdzwulw2ulzf7xi.jpg">
+            <% } %>    
+          </div>
+          <div class="col-sm-12 col-md-7 col-lg-6">
+            <div class="card-body">
+              <h4 class="card-text"><%= s.title %></h4>
+              <h5 class="card-text">type: <%= s.type %></h5>
+              <p class="card-text"><b><%= s.location %></b></p>
+              <a href="/spots/<%= s._id %>" class="btn btn-primary">See details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% } %>   
+  <% } %>
+</div> 
+
 
 <script crossorigin="anonymous" src="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.umd.min.js"></script>
 <script>
     const mapToken = '<%-process.env.MAPTILER_API_KEY%>';
-    const spot = { features: <%- JSON.stringify(spot) %>}
+    const spot = { features: `<%- JSON.stringify(spot) %>`}
 </script>
 <script src="/js/clusterMap.js"></script>
 
