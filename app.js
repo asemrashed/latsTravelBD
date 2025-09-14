@@ -24,24 +24,23 @@ const reviewRouter= require('./routes/review')
 const usersRouter= require('./routes/users')
 
 // process.env.DB_URL || 
-const dbUrl=process.env.DB_URL ||  'mongodb://127.0.0.1:27017/travel'
-mongoose.connect(dbUrl, {
-    tls: true,  // Force SSL connection
-    tlsInsecure: false,  // Avoid insecure SSL connection (if any)
-})
-    .then( async() => {
-        console.log('working');
+// const dbUrl=process.env.DB_URL ||  'mongodb://127.0.0.1:27017/travel'
+const dbUrl = process.env.DB_URL;
 
-        if (process.env.SEED_DB === 'true') {
-            console.log('Seeding the database...');
-            console.log('Seeding completed.');
-        }
-    })
-    .catch((err) => {
-        console.log(' HERE IS A PROBLEM');
-        console.log(err);
-        process.exit(1);
-    }) 
+if (!dbUrl) {
+  console.error("❌ No MongoDB URL found in environment!");
+  process.exit(1);
+}
+
+mongoose.connect(dbUrl, {
+  tls: true,
+  tlsInsecure: false,
+})
+  .then(() => console.log("✅ MongoDB connected"))
+  .catch((err) => {
+    console.error("❌ MongoDB connection error:", err);
+    process.exit(1);
+  });
 
 app.engine('ejs', ejsMate)
 app.set('views', path.join(__dirname, '/views'))
